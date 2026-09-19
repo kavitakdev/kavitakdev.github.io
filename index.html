@@ -9,7 +9,63 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/style.css" /><script>
+const contactForm = document.getElementById("contact-form");
+const formMessage = document.getElementById("form-message");
+const submitBtn = document.getElementById("submit-btn");
+
+contactForm.addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Sending...";
+
+    const formData = new FormData(contactForm);
+
+    try {
+        const response = await fetch(contactForm.action, {
+            method: "POST",
+            body: formData,
+            headers: {
+                "Accept": "application/json"
+            }
+        });
+
+        if (response.ok) {
+            formMessage.innerHTML = `
+                <div class="success-message">
+                    <span class="success-icon">✓</span>
+                    <div>
+                        <strong>Message sent successfully!</strong>
+                        <p>Thank you for reaching out. I'll get back to you soon.</p>
+                    </div>
+                </div>
+            `;
+
+            contactForm.reset();
+            submitBtn.textContent = "Message Sent ✓";
+
+            setTimeout(() => {
+                submitBtn.disabled = false;
+                submitBtn.textContent = "Send Message";
+            }, 4000);
+
+        } else {
+            throw new Error("Form submission failed");
+        }
+
+    } catch (error) {
+        formMessage.innerHTML = `
+            <div class="error-message">
+                Something went wrong. Please try again.
+            </div>
+        `;
+
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Send Message";
+    }
+});
+</script>
 </head>
 <body>
   <div class="progress-bar" id="progressBar"></div>
@@ -213,10 +269,12 @@
           <a href="https://github.com/kavitakdev" target="_blank" rel="noopener">GitHub ↗</a>
           <a href="https://www.linkedin.com/in/kavita-k-75845924/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
         </div>
-        <form class="contact-form" action="https://formspree.io/f/xnpnjnpa" method="POST">
+        <form id="contact-form" class="contact-form" action="https://formspree.io/f/xnpnjnpa" method="POST">
           <div class="form-row"><input type="text" name="name" placeholder="Your name" required><input type="email" name="email" placeholder="Your email" required></div>
           <textarea name="message" rows="5" placeholder="Tell me about the opportunity..." required></textarea>
-          <button class="btn btn-primary" type="submit">Send message <span>↗</span></button>
+          <button class="btn btn-primary" type="submit"  id="submit-btn">Send message <span>↗</span></button>
+              <div id="form-message"></div>
+
         </form>
       </div>
     </section>
