@@ -9,7 +9,22 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css" /></head>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    .project-filters{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 18px}
+    .project-filter{border:1px solid rgba(255,255,255,.18);background:transparent;color:inherit;border-radius:999px;padding:10px 16px;font:600 13px/1.2 Inter,sans-serif;cursor:pointer;transition:background .2s,border-color .2s,color .2s}
+    .project-filter:hover,.project-filter.active{background:#b7f36b;color:#172016;border-color:#b7f36b}
+    .project-filter:focus-visible,.project-page:focus-visible{outline:2px solid #b7f36b;outline-offset:3px}
+    .project-results{font-size:13px;opacity:.72;margin:0 0 18px}
+    .project-pagination{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:28px;flex-wrap:wrap}
+    .project-page{min-width:38px;height:38px;padding:0 12px;border:1px solid rgba(255,255,255,.2);border-radius:8px;background:transparent;color:inherit;cursor:pointer;font:600 13px Inter,sans-serif}
+    .project-page.active,.project-page:hover:not(:disabled){background:#b7f36b;color:#172016;border-color:#b7f36b}
+    .project-page:disabled{opacity:.35;cursor:not-allowed}
+    .project-card[hidden]{display:none!important}
+    @media(max-width:600px){.project-filters{gap:7px}.project-filter{padding:9px 12px;font-size:12px}}
+  </style>
+
+</head>
 <body>
   <div class="progress-bar" id="progressBar"></div>
   <div class="cursor-glow" id="cursorGlow"></div>
@@ -178,18 +193,31 @@
         <span class="section-number">04</span>
         <div><p class="kicker">SELECTED WORK · 10 PROJECTS</p><h2>Projects that<br><span>solve problems.</span></h2></div>
       </div>
-      <div class="project-grid">
-<article class="project-card reveal"><div class="project-top"><span>01 / FINANCIAL</span><a href="https://www.ctaxcrm.com/" target="_blank" rel="noopener">LIVE SITE ↗</a></div><div class="project-icon">CT</div><h3>CTAX CRM</h3><p>Financial &amp; billing automation platform with data ingestion, invoice generation, digital document signing and secure payment workflows.</p><div class="project-stack"><span>SugarCRM</span><span>CodeIgniter</span><span>DocuSign</span><span>Authorize.Net</span><span>Amazon S3</span></div></article>
-<article class="project-card reveal delay-1"><div class="project-top"><span>02 / FINANCIAL</span><a href="https://www.homerunfinancing.com/" target="_blank" rel="noopener">LIVE SITE ↗</a></div><div class="project-icon">PF</div><h3>PaceFunding / Home Run Financing</h3><p>Backend services supporting energy-saving loan products and financing workflows with REST and third-party integrations.</p><div class="project-stack"><span>CakePHP</span><span>WordPress</span><span>REST APIs</span></div></article>
-<article class="project-card reveal"><div class="project-top"><span>03 / TRANSPORT</span><a href="https://myeasydrop.ca/" target="_blank" rel="noopener">LIVE SITE ↗</a></div><div class="project-icon">ME</div><h3>MyEasyDrop</h3><p>Ride booking platform with city-to-city booking, administrative management, authentication, APIs and operational workflows.</p><div class="project-stack"><span>Next.js</span><span>NestJS</span></div></article>
-<article class="project-card reveal delay-1"><div class="project-top"><span>04 / HEALTHCARE</span><a href="http://www.checkinmd.com/" target="_blank" rel="noopener">LIVE SITE ↗</a></div><div class="project-icon">MD</div><h3>CheckInMD</h3><p>Healthcare appointment and patient check-in platform with automated SMS notifications and third-party API integrations.</p><div class="project-stack"><span>Laravel</span><span>Twilio SMS API</span><span>Facebook API</span></div></article>
-<article class="project-card reveal"><div class="project-top"><span>05 / E-COMMERCE</span><a href="http://www.forgeadour.com/" target="_blank" rel="noopener">LIVE SITE ↗</a></div><div class="project-icon">FA</div><h3>Forgeadour</h3><p>Multilingual WordPress multisite e-commerce platform with product configuration, recipe management, search and dealer locator functionality.</p><div class="project-stack"><span>WordPress</span><span>MySQL</span></div></article>
-<article class="project-card reveal delay-1"><div class="project-top"><span>06 / FOOD DELIVERY</span><a href="https://play.google.com/store/apps/details?id=com.carsnacks.app.customer&amp;hl=en_IN" target="_blank" rel="noopener">APP ↗</a></div><div class="project-icon">CS</div><h3>Carsnacks</h3><p>Food ordering and delivery platform with backend architecture for customers, vendors and drivers, secure payments and scalable APIs.</p><div class="project-stack"><span>Next.js</span><span>NestJS</span><span>Node.js</span><span>MongoDB</span><span>Stripe</span></div></article>
-<article class="project-card reveal"><div class="project-top"><span>07 / LOGISTICS</span><a href="https://api.pikup.tech/api" target="_blank" rel="noopener">API ↗</a></div><div class="project-icon">PK</div><h3>PikUp API</h3><p>Transportation and logistics REST APIs with authentication, business workflows and backend performance optimizations.</p><div class="project-stack"><span>REST API</span><span>Backend Services</span></div></article>
-<article class="project-card reveal delay-1"><div class="project-top"><span>08 / BUSINESS</span><a href="https://api.speedymep.com/api" target="_blank" rel="noopener">API ↗</a></div><div class="project-icon">SM</div><h3>SpeedyMeP API</h3><p>Scalable business operations APIs with secure integrations and optimized performance and reliability.</p><div class="project-stack"><span>REST API</span><span>Backend Services</span></div></article>
-<article class="project-card reveal"><div class="project-top"><span>09 / TRANSPORT</span><a href="https://echolimousine.com/" target="_blank" rel="noopener">LIVE SITE ↗</a></div><div class="project-icon">EL</div><h3>Echo Limousine</h3><p>Transportation booking platform covering limousine reservations, airport transfers, chauffeur dispatch, pricing and ride tracking.</p><div class="project-stack"><span>CakePHP</span><span>WordPress</span></div></article>
-<article class="project-card reveal delay-1"><div class="project-top"><span>10 / HEALTHCARE</span><a href="https://westwellness.com.au/" target="_blank" rel="noopener">LIVE SITE ↗</a></div><div class="project-icon">WW</div><h3>West Wellness</h3><p>Healthcare website project built and maintained on WordPress.</p><div class="project-stack"><span>WordPress</span><span>Healthcare</span></div></article>
+      <div class="project-filters" id="projectFilters" role="group" aria-label="Filter projects by technology">
+        <button type="button" class="project-filter active" data-filter="all" aria-pressed="true">All Projects</button>
+        <button type="button" class="project-filter" data-filter="laravel" aria-pressed="false">Laravel</button>
+        <button type="button" class="project-filter" data-filter="nodejs" aria-pressed="false">Node.js</button>
+        <button type="button" class="project-filter" data-filter="core-php" aria-pressed="false">Core PHP</button>
+        <button type="button" class="project-filter" data-filter="codeigniter" aria-pressed="false">CodeIgniter</button>
+        <button type="button" class="project-filter" data-filter="cakephp" aria-pressed="false">CakePHP</button>
+        <button type="button" class="project-filter" data-filter="wordpress" aria-pressed="false">WordPress</button>
+        <button type="button" class="project-filter" data-filter="nestjs" aria-pressed="false">NestJS</button>
+        <button type="button" class="project-filter" data-filter="nextjs" aria-pressed="false">Next.js</button>
+      </div>
+      <p class="project-results" id="projectResults" aria-live="polite"></p>
+      <div class="project-grid" id="projectGrid">
+<article data-categories="codeigniter" class="project-card reveal"><div class="project-top"><span>01 / FINANCIAL</span><a href="https://www.ctaxcrm.com/" target="_blank" rel="noopener">LIVE SITE ↗</a></div><div class="project-icon">CT</div><h3>CTAX CRM</h3><p>Financial &amp; billing automation platform with data ingestion, invoice generation, digital document signing and secure payment workflows.</p><div class="project-stack"><span>SugarCRM</span><span>CodeIgniter</span><span>DocuSign</span><span>Authorize.Net</span><span>Amazon S3</span></div></article>
+<article data-categories="cakephp wordpress" class="project-card reveal delay-1"><div class="project-top"><span>02 / FINANCIAL</span><a href="https://www.homerunfinancing.com/" target="_blank" rel="noopener">LIVE SITE ↗</a></div><div class="project-icon">PF</div><h3>PaceFunding / Home Run Financing</h3><p>Backend services supporting energy-saving loan products and financing workflows with REST and third-party integrations.</p><div class="project-stack"><span>CakePHP</span><span>WordPress</span><span>REST APIs</span></div></article>
+<article data-categories="nestjs nextjs nodejs" class="project-card reveal"><div class="project-top"><span>03 / TRANSPORT</span><a href="https://myeasydrop.ca/" target="_blank" rel="noopener">LIVE SITE ↗</a></div><div class="project-icon">ME</div><h3>MyEasyDrop</h3><p>Ride booking platform with city-to-city booking, administrative management, authentication, APIs and operational workflows.</p><div class="project-stack"><span>Next.js</span><span>NestJS</span></div></article>
+<article data-categories="laravel" class="project-card reveal delay-1"><div class="project-top"><span>04 / HEALTHCARE</span><a href="http://www.checkinmd.com/" target="_blank" rel="noopener">LIVE SITE ↗</a></div><div class="project-icon">MD</div><h3>CheckInMD</h3><p>Healthcare appointment and patient check-in platform with automated SMS notifications and third-party API integrations.</p><div class="project-stack"><span>Laravel</span><span>Twilio SMS API</span><span>Facebook API</span></div></article>
+<article data-categories="wordpress" class="project-card reveal"><div class="project-top"><span>05 / E-COMMERCE</span><a href="http://www.forgeadour.com/" target="_blank" rel="noopener">LIVE SITE ↗</a></div><div class="project-icon">FA</div><h3>Forgeadour</h3><p>Multilingual WordPress multisite e-commerce platform with product configuration, recipe management, search and dealer locator functionality.</p><div class="project-stack"><span>WordPress</span><span>MySQL</span></div></article>
+<article data-categories="nestjs nextjs nodejs" class="project-card reveal delay-1"><div class="project-top"><span>06 / FOOD DELIVERY</span><a href="https://play.google.com/store/apps/details?id=com.carsnacks.app.customer&amp;hl=en_IN" target="_blank" rel="noopener">APP ↗</a></div><div class="project-icon">CS</div><h3>Carsnacks</h3><p>Food ordering and delivery platform with backend architecture for customers, vendors and drivers, secure payments and scalable APIs.</p><div class="project-stack"><span>Next.js</span><span>NestJS</span><span>Node.js</span><span>MongoDB</span><span>Stripe</span></div></article>
+<article data-categories="api" class="project-card reveal"><div class="project-top"><span>07 / LOGISTICS</span><a href="https://api.pikup.tech/api" target="_blank" rel="noopener">API ↗</a></div><div class="project-icon">PK</div><h3>PikUp API</h3><p>Transportation and logistics REST APIs with authentication, business workflows and backend performance optimizations.</p><div class="project-stack"><span>REST API</span><span>Backend Services</span></div></article>
+<article data-categories="api" class="project-card reveal delay-1"><div class="project-top"><span>08 / BUSINESS</span><a href="https://api.speedymep.com/api" target="_blank" rel="noopener">API ↗</a></div><div class="project-icon">SM</div><h3>SpeedyMeP API</h3><p>Scalable business operations APIs with secure integrations and optimized performance and reliability.</p><div class="project-stack"><span>REST API</span><span>Backend Services</span></div></article>
+<article data-categories="cakephp wordpress" class="project-card reveal"><div class="project-top"><span>09 / TRANSPORT</span><a href="https://echolimousine.com/" target="_blank" rel="noopener">LIVE SITE ↗</a></div><div class="project-icon">EL</div><h3>Echo Limousine</h3><p>Transportation booking platform covering limousine reservations, airport transfers, chauffeur dispatch, pricing and ride tracking.</p><div class="project-stack"><span>CakePHP</span><span>WordPress</span></div></article>
+<article data-categories="wordpress" class="project-card reveal delay-1"><div class="project-top"><span>10 / HEALTHCARE</span><a href="https://westwellness.com.au/" target="_blank" rel="noopener">LIVE SITE ↗</a></div><div class="project-icon">WW</div><h3>West Wellness</h3><p>Healthcare website project built and maintained on WordPress.</p><div class="project-stack"><span>WordPress</span><span>Healthcare</span></div></article>
 </div>
+      <nav class="project-pagination" id="projectPagination" aria-label="Project pages"></nav>
     </section>
 
     <section class="section education">
@@ -230,6 +258,77 @@
   </footer>
 
   <script src="assets/js/main.js"></script>
+
+  <script>
+  (function () {
+    const grid = document.getElementById('projectGrid');
+    const filters = document.getElementById('projectFilters');
+    const results = document.getElementById('projectResults');
+    const pagination = document.getElementById('projectPagination');
+    if (!grid || !filters || !results || !pagination) return;
+
+    const cards = Array.from(grid.querySelectorAll('.project-card'));
+    const pageSize = 6;
+    let activeFilter = 'all';
+    let currentPage = 1;
+
+    function matchingCards() {
+      return cards.filter(card => activeFilter === 'all' ||
+        (card.dataset.categories || '').split(/\s+/).includes(activeFilter));
+    }
+
+    function render() {
+      const matches = matchingCards();
+      const pageCount = Math.ceil(matches.length / pageSize);
+      currentPage = Math.max(1, Math.min(currentPage, pageCount || 1));
+      const start = (currentPage - 1) * pageSize;
+      const visible = new Set(matches.slice(start, start + pageSize));
+      cards.forEach(card => { card.hidden = !visible.has(card); });
+      results.textContent = matches.length
+        ? `Showing ${start + 1}–${Math.min(start + pageSize, matches.length)} of ${matches.length} projects`
+        : 'No projects are currently tagged with this technology.';
+
+      pagination.innerHTML = '';
+      if (pageCount <= 1) return;
+      const addButton = (label, page, disabled, active, ariaLabel) => {
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'project-page' + (active ? ' active' : '');
+        button.textContent = label;
+        button.disabled = disabled;
+        if (ariaLabel) button.setAttribute('aria-label', ariaLabel);
+        if (active) button.setAttribute('aria-current', 'page');
+        button.addEventListener('click', () => {
+          currentPage = page;
+          render();
+          document.getElementById('projects').scrollIntoView({behavior:'smooth', block:'start'});
+        });
+        pagination.appendChild(button);
+      };
+      addButton('←', currentPage - 1, currentPage === 1, false, 'Previous page');
+      for (let page = 1; page <= pageCount; page++) {
+        addButton(String(page), page, false, page === currentPage, `Page ${page}`);
+      }
+      addButton('→', currentPage + 1, currentPage === pageCount, false, 'Next page');
+    }
+
+    filters.addEventListener('click', event => {
+      const button = event.target.closest('[data-filter]');
+      if (!button) return;
+      activeFilter = button.dataset.filter;
+      currentPage = 1;
+      filters.querySelectorAll('[data-filter]').forEach(item => {
+        const selected = item === button;
+        item.classList.toggle('active', selected);
+        item.setAttribute('aria-pressed', String(selected));
+      });
+      render();
+    });
+
+    render();
+  })();
+  </script>
+
   <script>
 const contactForm = document.getElementById("contact-form");
 const formMessage = document.getElementById("form-message");
